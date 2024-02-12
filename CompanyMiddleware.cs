@@ -27,7 +27,7 @@ public class CompanyMiddleware
         else if (context.Request.Path == "/random")
         {
             Random rnd = new Random();
-            int randomNumber = rnd.Next(0, 101); // Випадкове число від 0 до 100
+            int randomNumber = rnd.Next(0, 101);
 
             await context.Response.WriteAsync($"Random Number: {randomNumber}");
         }
