@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+    var value = Context.Request.Cookies["Data"];
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Перевірка значення в Cookies</title>
+</head>
+<body>
+    <h2>Значення в Cookies:</h2>
+    @if (!string.IsNullOrEmpty(value))
+    {
+        <p>@value</p>
+    }
+    else
+    {
+        <p>Значення в Cookies не знайдено</p>
+    }
+</body>
+</html>
