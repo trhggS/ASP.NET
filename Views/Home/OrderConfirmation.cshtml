@@ -1,0 +1,21 @@
+﻿@model lr6.Models.Product[]
+
+<h1 style="text-align: center;">Order Confirmation</h1>
+
+<table style="margin: 0 auto;">
+    <thead>
+        <tr>
+            <th style="text-align: center;">Name</th>
+            <th style="text-align: center;">Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td style="text-align: center;">@product.Name</td>
+                <td style="text-align: center;">@product.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>

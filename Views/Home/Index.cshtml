@@ -1,0 +1,24 @@
+﻿@model lr6.Models.User
+
+<form form method="post" action="/Home/Register">
+    <label for="Name">Name:</label>
+    <input type="text" id="Name" name="Name" required><br>
+    <label for="Age">Age:</label>
+    <input type="number" id="Age" name="Age" required><br>
+    <div id="quantityField" style="display: none;">
+        <label for="Age">Quantity:</label>
+        <input type="number" id="OrderedProductUnits" name="OrderedProductUnits"><br>
+    </div>
+
+    <button type="submit">Confirm</button>
+</form>
+<script>
+    document.getElementById("Age").addEventListener("input", function () {
+        var age = parseInt(document.getElementById("Age").value);
+        if (age > 16) {
+            document.querySelector("#quantityField").style.display = "block";
+        } else {
+            document.querySelector("#quantityField").style.display = "none";
+        }
+    });
+</script>
