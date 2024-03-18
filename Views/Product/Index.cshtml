@@ -1,0 +1,34 @@
+﻿@model List<lr8.Models.Product>
+
+<h2>List View</h2>
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.ID. @product.Name - $@product.Price (Created: @product.CreatedDate)</li>
+    }
+</ul>
+
+<h2>Table View</h2>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Created Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.ID</td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.CreatedDate.ToString("MM/dd/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
